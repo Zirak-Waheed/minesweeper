@@ -1,9 +1,17 @@
-<h1>Create new board</h1>
+<div class="container">
+  <h1>Create new board</h1>
 
-<%= render "form", board: @board %>
+  <%= render "form", board: @board %>
+</div>
 
 <br>
 
-<div>
-  <%= link_to "Back to boards", boards_path %>
+<div class="container">
+  <h3>Recent Boards</h3>  
+  <%= render "list", boards: @boards %>
+  
+  <div>
+    <%= link_to "view all generated boards", boards_path %>
+  </div>
 </div>
+

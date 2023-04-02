@@ -17,7 +17,7 @@ class Board < ApplicationRecord
   end
 
   def mines_count
-    if mines > length*width
+    if mines && length && width && mines > length*width
       errors.add(:mines, "can't be greater than total number of cells")
     end
   end

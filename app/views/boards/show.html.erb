@@ -1,5 +1,5 @@
 <p style="color: green"><%= notice %></p>
-<div>
+<div class="container">
   <h3>
     <strong>Board Name:</strong>
     <%= @board.name %>
@@ -11,13 +11,17 @@
   </p>
 
   <p>
-    <table>
+    <table style="border: 1px solid black">
       <tbody>
         <% @board.state.each do |row| %>
           <tr>
             <% row.each do |cell| %>
-              <td>
-                <%= cell %>
+              <td class="p-1">
+                <% if cell == 0 %>
+                  <i class="fas fa-square" style="color:grey"></i>
+                <% else %>
+                  <i class="fas fa-bomb"></i>
+                <% end %>
               </td>
             <% end %>
           </tr>
@@ -29,8 +33,6 @@
 
 
 <div>
-  <%= link_to "Edit this board", edit_board_path(@board) %> |
   <%= link_to "Back to boards", boards_path %>
-
-  <%= button_to "Destroy this board", @board, method: :delete %>
 </div>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
