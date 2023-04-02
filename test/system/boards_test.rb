@@ -14,6 +14,11 @@ class BoardsTest < ApplicationSystemTestCase
     visit boards_url
     click_on "New board"
 
+    fill_in "Email", with: @board.email
+    fill_in "Length", with: @board.length
+    fill_in "Mines", with: @board.mines
+    fill_in "Name", with: @board.name
+    fill_in "Width", with: @board.width
     click_on "Create Board"
 
     assert_text "Board was successfully created"
@@ -24,6 +29,11 @@ class BoardsTest < ApplicationSystemTestCase
     visit board_url(@board)
     click_on "Edit this board", match: :first
 
+    fill_in "Email", with: @board.email
+    fill_in "Length", with: @board.length
+    fill_in "Mines", with: @board.mines
+    fill_in "Name", with: @board.name
+    fill_in "Width", with: @board.width
     click_on "Update Board"
 
     assert_text "Board was successfully updated"

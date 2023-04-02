@@ -12,6 +12,31 @@
   <% end %>
 
   <div>
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :length, style: "display: block" %>
+    <%= form.number_field :length %>
+  </div>
+
+  <div>
+    <%= form.label :width, style: "display: block" %>
+    <%= form.number_field :width %>
+  </div>
+
+  <div>
+    <%= form.label :mines, style: "display: block" %>
+    <%= form.number_field :mines %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>
